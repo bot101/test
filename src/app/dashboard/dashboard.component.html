@@ -1,0 +1,18 @@
+  <div class="sidenav-container c-dashboard">
+      <mat-toolbar color="primary">
+      <span>Travel Reporter</span>
+      <span class="fill-space"></span>
+      <button
+        type="button"
+        aria-label="Logout"
+        mat-icon-button
+        (click)="logout()">
+        <mat-icon aria-label="Logout button">logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-grid-list [cols]="(isMobile$ | async) ? 1 : 5" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let airport of airports" >
+        <app-airport-card (click)="showAirportInfo(airport)" [airportInfo]="airport"></app-airport-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>

@@ -1,0 +1,121 @@
+
+<div class="c-detail-modal fixActionRow">
+  <div fxLayout="row nowrap" fxLayoutAlign="start stretch" *ngIf="!(isMobile$ | async)">
+    <div fxFlex="1 1">
+      <h2 class="c-detail-title" mat-dialog-title>
+        <span fxFlex="1 1" class="c-name">
+          {{data.airport.name}} Departures
+        </span>
+        <span fxFlex="1 1" class="c-time-selector">
+          <mat-form-field [formGroup]="departureForm">
+            <mat-label>Select a time range</mat-label>
+            <mat-select  formControlName="departureSelector">
+              <mat-option>None</mat-option>
+              <mat-option value="3600">Last 1 hour</mat-option>
+              <mat-option value="10800">Last 3 hours</mat-option>
+              <mat-option value="21600">Last 6 hours</mat-option>
+              <mat-option value="86400">Last 24 hours</mat-option>
+              <mat-option value="172800">Last 2 days</mat-option>
+              <mat-option value="604800">Last 1 week</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+
+      </h2>
+
+    </div>
+    <div fxFlex="1 1">
+      <h2 class="c-detail-title" mat-dialog-title>
+        <span fxFlex="1 1" class="c-name">
+          {{data.airport.name}} Arrivals
+        </span>
+        <span fxFlex="1 1" class="c-time-selector">
+          <mat-form-field [formGroup]="arrivalForm">
+            <mat-label>Select a time range</mat-label>
+            <mat-select  formControlName="arrivalSelector">
+              <mat-option>None</mat-option>
+              <mat-option value="3600">Last 1 hour</mat-option>
+              <mat-option value="10800">Last 3 hours</mat-option>
+              <mat-option value="21600">Last 6 hours</mat-option>
+              <mat-option value="86400">Last 24 hours</mat-option>
+              <mat-option value="172800">Last 2 days</mat-option>
+              <mat-option value="604800">Last 1 week</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+
+      </h2>
+
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+    <div fxLayout="row nowrap" fxFlexFill fxLayoutAlign="start stretch" *ngIf="!(isMobile$ | async)">
+
+      <div fxFlex="1 1" fxFlexFill>
+        <div style="height: 100%; width: 100%; margin: auto; overflow-x: hidden; overflow-y: auto;">
+          <mat-accordion class="example-headers">
+            <mat-expansion-panel *ngFor="let departure of departureResult.departures">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  This is the expansion title
+                </mat-panel-title>
+                <mat-panel-description>
+                  This is a summary of the content
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <p>This is the primary content of the panel.</p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+
+      <div fxFlex="1 1" fxFlexFill>
+        <div style="height: 100%; width: 100%; margin: auto; overflow-x: hidden; overflow-y: auto;">
+          <mat-accordion class="example-headers-align">
+            <mat-expansion-panel *ngFor="let arrival of arrivalResult.arrivals">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  This is the expansion title
+                </mat-panel-title>
+                <mat-panel-description>
+                  This is a summary of the content
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <p>This is the primary content of the panel.</p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+
+    </div>
+
+  </mat-dialog-content>
+  <div class="spacer"></div>
+
+  <mat-dialog-actions>
+    <span class="fill-space"></span>
+    <button mat-button mat-dialog-close>No</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-button [mat-dialog-close]="true">Yes</button>
+  </mat-dialog-actions>
+    <!-- <mat-list>
+      <h3 mat-subheader>Folders</h3>
+      <mat-list-item>
+         <mat-icon mat-list-icon>folder</mat-icon>
+         <h4 mat-line>One</h4>
+         <p mat-line class="demo-2"> true </p>
+
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>Notes</h3>
+      <mat-list-item>
+         <mat-icon mat-list-icon>note</mat-icon>
+         <h4 mat-line>Note Name</h4>
+         <p mat-line class="demo-2"> true </p>
+      </mat-list-item>
+   </mat-list> -->
+</div>

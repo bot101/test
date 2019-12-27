@@ -1,0 +1,36 @@
+.c-dashboard{
+
+  mat-grid-list{
+    margin: auto;
+    margin-top: 15px;
+    width: 80vw;
+  }
+
+  &.sidenav-container {
+    height: 100%;
+  }
+
+  .sidenav {
+    width: 200px;
+  }
+
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  mat-grid-tile{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  app-airport-card{
+    width: 100%;
+  }
+
+}

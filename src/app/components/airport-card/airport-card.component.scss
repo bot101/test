@@ -1,0 +1,13 @@
+.airport-card{
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  mat-card-subtitle{
+    color: #fafafa;
+  }
+
+  mat-card-actions{
+    margin-bottom: 0;
+    padding: 0;
+  }
+}

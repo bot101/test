@@ -1,0 +1,16 @@
+<mat-card 
+  matRipple 
+  class="airport-card" 
+  [ngStyle]="{background: 'linear-gradient(0deg, rgba(52, 43, 61, 0.92), rgba(52, 43, 61, 0.452)), url(' + airportInfo.imageUrl + ')'}"
+>
+  <div>
+    <mat-card-header>
+      <mat-card-title>{{airportInfo.name}}</mat-card-title>
+      <mat-card-subtitle>{{airportInfo.icao}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <a [href]="airportInfo.url" target='__blank' mat-button>Website</a>
+    </mat-card-actions>
+  </div>
+
+</mat-card>
