@@ -3,6 +3,16 @@
     // display: inline-block;
   }
 
+  .cdk-viewport{
+    height: 60vh;
+  }
+
+  .c-range--mobile{
+    display: block;
+    margin-top: 10px;
+    height: unset !important;
+  }
+
   &.fixActionRow {
     height: 100%;
     display: flex;
@@ -22,10 +32,23 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: small;
   }
 
   mat-form-field {
     height: .6em;
     font-size: .8em;
+  }
+
+  .c-detail-spinner{
+    margin: auto;
+    margin-top: 20%;
+  }
+
+  .c-accordion-header{
+    small{
+      float: right;
+      display: contents;
+    }
   }
 }

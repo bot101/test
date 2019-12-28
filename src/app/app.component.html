@@ -1,1 +1,8 @@
 <router-outlet></router-outlet>
+
+<div class="c-app-loader" [ngStyle]="{display: loaderState ? 'flex' : 'none' }">
+  <mat-progress-spinner
+    class="c-detail-spinner"
+    [mode]="'indeterminate'">
+  </mat-progress-spinner>
+</div>

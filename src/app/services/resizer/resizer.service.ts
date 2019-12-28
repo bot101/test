@@ -9,12 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class ResizerService {
 
-  constructor(private breakpointObserver: BreakpointObserver){ }
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
-  observeMobile(): Observable<boolean>{
+  observeMobile(): Observable<boolean> {
     return this.breakpointObserver.observe([
       Breakpoints.Handset,
-    ]).pipe( 
+      Breakpoints.Tablet
+    ]).pipe(
         map(result => result.matches),
         shareReplay()
     );

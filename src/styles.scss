@@ -18,3 +18,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: flex-start !important ;
   align-items: flex-start !important;
 }
+
+.mat-card-header-text {
+  margin: 0 !important;
+}
+
+.c-detail-modal--mobile{
+  // height: 60vh;
+  .cdk-viewport{
+    height: 70vh;
+  }
+  .mat-dialog-content{
+    max-height: 80vh;
+  }
+}

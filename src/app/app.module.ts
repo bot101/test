@@ -26,6 +26,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpConfigInterceptor } from './interceptors/http.interceptor';
+import { MatInputModule  } from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -58,7 +62,11 @@ import { HttpConfigInterceptor } from './interceptors/http.interceptor';
     MatExpansionModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    ScrollingModule,
+    MatTabsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },

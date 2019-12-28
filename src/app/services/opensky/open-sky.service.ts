@@ -45,12 +45,12 @@ export class OpenSkyService {
     .pipe(first(), map((res: IAirportArrival[]) => new AirportArrivalResponse(res)));
   }
 
-  private getTimeRange(duration: number){
+  private getTimeRange(duration: number) {
     const end = new Date().getTime();
     return {
       begin: Math.floor((end / 1000) - duration),
       end: Math.floor(end / 1000)
-    }
+    };
   }
 
   private buildQueryParams(params: object) {

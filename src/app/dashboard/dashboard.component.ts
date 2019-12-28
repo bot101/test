@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth/auth.service';
 import { IAirport } from './../interfaces/airport/airport';
 import { AirportInfo } from './../data/airport-info';
 import { ResizerService } from './../services/resizer/resizer.service';
@@ -17,10 +18,10 @@ import { DetailModalComponent } from '../components/detail-modal/detail-modal.co
 export class DashboardComponent implements OnInit, OnDestroy {
 
 
-  isMobile$: Observable<boolean>
+  isMobile$: Observable<boolean>;
   airports: IAirport[];
 
-  constructor(private dialog: MatDialog, private resizer: ResizerService) {}
+  constructor(private dialog: MatDialog, private resizer: ResizerService, private auth: AuthService) {}
 
   ngOnInit(): void {
     this.airports = AirportInfo.AIRPORTS;
@@ -28,7 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-
+    this.auth.logout();
   }
 
   showAirportInfo(airport: IAirport) {
@@ -44,7 +45,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.isMobile$ = null;
   }
 
