@@ -24,7 +24,10 @@ export class HttpConfigInterceptor implements HttpInterceptor {
                     if (error.status === 0) {
                       this.snackBar.open(
                         'An error connecting to the internet has occured. Check your network connection and try again.',
-                        'Close'
+                        'Close',
+                        {
+                          duration: 5000
+                        }
                       );
                     }
                     console.log(error);

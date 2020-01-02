@@ -17,7 +17,10 @@ export class AuthService {
     }
     this.snackBar.open(
       'Invalid login credentials',
-      'Close'
+      'Close',
+      {
+        duration: 5000
+      }
     );
   }
 
