@@ -1,4 +1,6 @@
 .airport-card{
+  background-position: center !important;
+  height: 85% !important;
 
   color: #ffffff;
   cursor: pointer;
@@ -11,11 +13,6 @@
   mat-card-actions{
     margin-bottom: 0;
     padding: 0;
-  }
-
-  mat-card{
-    background-position: center !important;
-    height: 85% !important;
   }
 
   mat-card-header{
