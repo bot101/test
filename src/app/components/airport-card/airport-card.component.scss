@@ -1,7 +1,9 @@
 .airport-card{
+
   color: #ffffff;
   cursor: pointer;
   padding: 10px;
+
   mat-card-subtitle{
     color: #fafafa;
   }
@@ -10,4 +12,16 @@
     margin-bottom: 0;
     padding: 0;
   }
+
+  mat-card{
+    background-position: center !important;
+    height: 85% !important;
+  }
+
+  mat-card-header{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
 }
